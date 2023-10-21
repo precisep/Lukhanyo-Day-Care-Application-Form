@@ -1,6 +1,7 @@
 import streamlit as st
 from pymongo import MongoClient
 from datetime import datetime
+import base64
 
 
 db_uri = st.secrets["db"]["db_uri"]
@@ -60,10 +61,24 @@ footer:before{
 </style>
 """, unsafe_allow_html=True)
 
-#using strimlit form to collect data from user
+
+
 with st.form('data_form', clear_on_submit=True):
-    st.image("logo.gif", format='image/gif', use_column_width='always')
-    
+    file_path = "./logo.gif"  # Update the file path as needed
+
+    # Open and read the GIF file
+    with open(file_path, "rb") as file_:
+        contents = file_.read()
+
+    # Encode the GIF file to base64
+    data_url = base64.b64encode(contents).decode("utf-8")
+
+    # Display the GIF using Markdown with width set to 400
+    st.markdown(
+        f'<img src="data:image/gif;base64,{data_url}" alt="logo gif" width="685">',
+        unsafe_allow_html=True,
+    )
+
     # Child's information
     child_name = st.text_input("Child's Full Name and Surname:", placeholder='Full Name and Surname')
     child_dob = st.date_input("Child's Date of Birth:")
