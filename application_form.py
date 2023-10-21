@@ -75,7 +75,7 @@ with st.form('data_form', clear_on_submit=True):
 
     # Display the GIF using Markdown with width set to 400
     st.markdown(
-        f'<img src="data:image/gif;base64,{data_url}" alt="logo gif" width="685">',
+        f'<img src="data:gif;base64,{data_url}" alt="logo gif" width="685">',
         unsafe_allow_html=True,
     )
 
