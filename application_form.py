@@ -62,8 +62,8 @@ footer:before{
 
 #using strimlit form to collect data from user
 with st.form('data_form', clear_on_submit=True):
-    st.image("logo.gif",use_column_width='always')#, width=680)
-
+    st.image("logo.gif", format='image/gif', use_column_width='always')
+    
     # Child's information
     child_name = st.text_input("Child's Full Name and Surname:", placeholder='Full Name and Surname')
     child_dob = st.date_input("Child's Date of Birth:")
