@@ -1,7 +1,7 @@
 import streamlit as st
 from pymongo import MongoClient
 from datetime import datetime
-
+import time
 
 
 db_uri = st.secrets["db"]["db_uri"]
@@ -153,11 +153,13 @@ with st.form('data_form', clear_on_submit=True):
                 "school_fees_aggreement": school_fees
             }
             submissions.insert_one(submission)
-            st.markdown("""
-<div style="background-color: #D1F2E6; padding: 10px; border-radius: 5px;">
-    <p style="color: #128171; font-size: 18px; font-weight: bold; text-align: center;">✅ Thank you! Your application form has been successfully submitted.</p>
-</div>
-""", unsafe_allow_html=True)
+    
+            with st.spinner('Wait for it...'):
+                time.sleep(5)
+            st.balloons()
+            st.info('Thank you! Your application form has been successfully submitted.', icon="✅")
+
+            
 
 
 
