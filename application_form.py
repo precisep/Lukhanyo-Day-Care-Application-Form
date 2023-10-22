@@ -64,19 +64,9 @@ footer:before{
 
 
 with st.form('data_form', clear_on_submit=True):
-    file_path = "./logo.gif"  # Update the file path as needed
+    file_path = './logo.gif'
 
-    # Open and read the GIF file
-    with open(file_path, "rb") as file_:
-        contents = file_.read()
-
-    # Encode the GIF file to base64
-    data_url = base64.b64encode(contents).decode("utf-8")
-
-    # Display the GIF using Markdown with width set to 400
-    st.markdown(
-    f'<img src="data:gif;base64,{data_url}" alt="logo gif" width="685" loop>',
-    unsafe_allow_html=True,)
+    st.markdown(f"![Your Awesome GIF]({file_path})")
 
 
     # Child's information
