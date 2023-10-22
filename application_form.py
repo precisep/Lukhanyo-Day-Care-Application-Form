@@ -64,9 +64,9 @@ footer:before{
 
 
 with st.form('data_form', clear_on_submit=True):
-    file_path = './logo.gif'
+    file_path = './logo.png'
 
-    st.markdown(f"![Your Awesome GIF]({file_path})")
+    st.image(f"{file_path}")
 
 
     # Child's information
