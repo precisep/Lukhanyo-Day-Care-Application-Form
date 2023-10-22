@@ -1,7 +1,7 @@
 import streamlit as st
 from pymongo import MongoClient
 from datetime import datetime
-import base64
+
 
 
 db_uri = st.secrets["db"]["db_uri"]
