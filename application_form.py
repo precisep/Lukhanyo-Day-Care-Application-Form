@@ -114,12 +114,12 @@ with st.form('data_form', clear_on_submit=True):
             st.error("Child Date of Birth is a required field")
         elif not child_gender:
             st.error("Child Gender is a required field")
-        elif not parent1_name:
-            st.error("Parent Name is a required field")
-        elif not parent1_email:
-            st.error("Parent Email is a required field")
-        elif not parent1_phone:
-            st.error("Parent Phone is a required field")
+        #elif not parent1_name:s
+        #    st.error("Parent Name is a required field")
+        #elif not parent1_email:
+        #    st.error("Parent Email is a required field")
+        #elif not parent1_phone:
+         #   st.error("Parent Phone is a required field")
         else:
             # Store the submission in MongoDB
             current_datetime = datetime.now()
