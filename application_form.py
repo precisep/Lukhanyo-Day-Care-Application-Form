@@ -112,8 +112,8 @@ with st.form('data_form', clear_on_submit=True):
             st.error("Child Name is a required field")
         elif not child_dob:
             st.error("Child Date of Birth is a required field")
-        elif not child_gender:
-            st.error("Child Gender is a required field")
+        #elif not child_gender:
+         #   st.error("Child Gender is a required field")
         #elif not parent1_name:s
         #    st.error("Parent Name is a required field")
         #elif not parent1_email:
