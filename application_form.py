@@ -158,7 +158,7 @@ with st.form('data_form', clear_on_submit=True):
                 time.sleep(5)
             st.balloons()
             st.info('Thank you! Your application form has been successfully submitted.', icon="✅")
-            st.experimental_rerun()
+            
 
             
 
